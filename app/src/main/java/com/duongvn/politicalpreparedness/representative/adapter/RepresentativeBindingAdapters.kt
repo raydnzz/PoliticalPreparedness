@@ -11,7 +11,7 @@ import com.duongvn.politicalpreparedness.R
 @BindingAdapter("profileImage")
 fun fetchImage(view: ImageView, src: String?) {
     src?.let {
-        val uri = src.toUri().buildUpon().scheme("https").build()
+        val uri = it.toUri().buildUpon().scheme("https").build()
         Glide.with(view.context)
             .load(uri)
             .circleCrop()
